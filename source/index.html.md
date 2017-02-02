@@ -108,7 +108,6 @@ curl -X GET "https://sw-rails.herokuapp.com/api/v1/prospects?filter_by_status=re
 
 This endpoint retrieves all prospects that have the specified status.
 
-<aside class="warning">Inside HTML code blocks like this one, you can't use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
 
 ### HTTP Request
 
