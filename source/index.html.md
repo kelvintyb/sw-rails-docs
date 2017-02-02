@@ -63,7 +63,7 @@ curl -X GET "https://sw-rails.herokuapp.com/api/v1/prospects?page=1&per_page=2"
   }
 ```
 
-This endpoint retrieves all kittens, and accepts optional parameters for pagination.
+This endpoint retrieves all prospects, and accepts optional parameters for pagination.
 
 ### HTTP Request
 
