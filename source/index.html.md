@@ -17,8 +17,7 @@ search: true
 
 Welcome to the SalesKitten API! You can use our API to access API endpoints, which can get information on various prospects/whales & emails in our database.
 
-We currently have language bindings in Shell - You can view code examples in the dark area to the right :)
-
+We currently only have language bindings in Shell - You can view code examples in the dark area to the right :)
 
 # Prospects
 
@@ -77,9 +76,6 @@ Parameter | Default | Description
 page | false | If set to a number, the per page limit of results will be 25
 per_page | false | If set to a number, the per page limit of results will be set to that number
 
-<aside class="success">
-Remember —
-</aside>
 
 ## Filter Prospects
 
