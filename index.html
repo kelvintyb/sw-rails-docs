@@ -1,0 +1,492 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>API Reference</title>
+
+    <style>
+      .highlight table td { padding: 5px; }
+.highlight table pre { margin: 0; }
+.highlight, .highlight .w {
+  color: #f8f8f2;
+  background-color: #272822;
+}
+.highlight .err {
+  color: #272822;
+  background-color: #f92672;
+}
+.highlight .c, .highlight .cd, .highlight .cm, .highlight .c1, .highlight .cs {
+  color: #75715e;
+}
+.highlight .cp {
+  color: #f4bf75;
+}
+.highlight .nt {
+  color: #f4bf75;
+}
+.highlight .o, .highlight .ow {
+  color: #f8f8f2;
+}
+.highlight .p, .highlight .pi {
+  color: #f8f8f2;
+}
+.highlight .gi {
+  color: #a6e22e;
+}
+.highlight .gd {
+  color: #f92672;
+}
+.highlight .gh {
+  color: #66d9ef;
+  background-color: #272822;
+  font-weight: bold;
+}
+.highlight .k, .highlight .kn, .highlight .kp, .highlight .kr, .highlight .kv {
+  color: #ae81ff;
+}
+.highlight .kc {
+  color: #fd971f;
+}
+.highlight .kt {
+  color: #fd971f;
+}
+.highlight .kd {
+  color: #fd971f;
+}
+.highlight .s, .highlight .sb, .highlight .sc, .highlight .sd, .highlight .s2, .highlight .sh, .highlight .sx, .highlight .s1 {
+  color: #a6e22e;
+}
+.highlight .sr {
+  color: #a1efe4;
+}
+.highlight .si {
+  color: #cc6633;
+}
+.highlight .se {
+  color: #cc6633;
+}
+.highlight .nn {
+  color: #f4bf75;
+}
+.highlight .nc {
+  color: #f4bf75;
+}
+.highlight .no {
+  color: #f4bf75;
+}
+.highlight .na {
+  color: #66d9ef;
+}
+.highlight .m, .highlight .mf, .highlight .mh, .highlight .mi, .highlight .il, .highlight .mo, .highlight .mb, .highlight .mx {
+  color: #a6e22e;
+}
+.highlight .ss {
+  color: #a6e22e;
+}
+    </style>
+    <link href="stylesheets/screen.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print.css" rel="stylesheet" media="print" />
+      <script src="javascripts/all.js"></script>
+  </head>
+
+  <body class="index" data-languages="[&quot;shell&quot;]">
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar.png" alt="Navbar" />
+      </span>
+    </a>
+    <div class="tocify-wrapper">
+      <img src="images/logo.png" alt="Logo" />
+        <div class="lang-selector">
+              <a href="#" data-language-name="shell">shell</a>
+        </div>
+        <div class="search">
+          <input type="text" class="search" id="input-search" placeholder="Search">
+        </div>
+        <ul class="search-results"></ul>
+      <div id="toc">
+      </div>
+        <ul class="toc-footer">
+            <li><a href='https://github.com/tripit/slate'>Documentation Powered by Slate</a></li>
+            <li><a href='https://kelvintyb.github.io'>API created by Kelvin Tan</a></li>
+        </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+
+<p>Welcome to the SalesKitten API! You can use our API to access API endpoints, which can get information on various prospects/whales &amp; emails in our database.</p>
+
+<p>We currently only have language bindings in Shell - You can view code examples in the dark area to the right :)</p>
+
+<h1 id="prospects">Prospects</h1>
+
+<h2 id="get-all-prospects">Get All Prospects</h2>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"https://sw-rails.herokuapp.com/api/v1/prospects?page=1&amp;per_page=2"</span>
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="w">  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sales_rep_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="s2">"Ashleigh"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="s2">"Schiller"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"Dynamic Paradigm Director"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email_address"</span><span class="p">:</span><span class="s2">"ashleigh@hilpert_mccullough_and_dubuque.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"contact"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_name"</span><span class="p">:</span><span class="s2">"Hilpert, McCullough and DuBuque"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_desc"</span><span class="p">:</span><span class="s2">"De-engineered needs-based monitoring"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_addr"</span><span class="p">:</span><span class="s2">"7248 D'Amore Row"</span><span class="p">,</span><span class="nt">"coy_city"</span><span class="p">:</span><span class="s2">"Leonorborough"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_country"</span><span class="p">:</span><span class="s2">"Malta"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_contact"</span><span class="p">:</span><span class="s2">"269-846-1976 x16677"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"cold"</span><span class="w">
+  </span><span class="p">}</span><span class="err">,</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"sales_rep_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"first_name"</span><span class="p">:</span><span class="s2">"Caleigh"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"last_name"</span><span class="p">:</span><span class="s2">"Stiedemann"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"Investor Solutions Planner"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"email_address"</span><span class="p">:</span><span class="s2">"caleigh@christiansen_quigley_and_kovacek.com"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"contact"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_name"</span><span class="p">:</span><span class="s2">"Christiansen, Quigley and Kovacek"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_desc"</span><span class="p">:</span><span class="s2">"Extended reciprocal productivity"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_addr"</span><span class="p">:</span><span class="s2">"1810 Heller Mission"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_city"</span><span class="p">:</span><span class="s2">"North Paxtonmouth"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_country"</span><span class="p">:</span><span class="s2">"Lao People's Democratic Republic"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"coy_contact"</span><span class="p">:</span><span class="s2">"110-535-4500 x611"</span><span class="p">,</span><span class="w">
+    </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"cold"</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all kittens, and accepts optional parameters for pagination.</p>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">GET https://sw-rails.herokuapp.com/api/v1/prospects</code></p>
+
+<h3 id="query-parameters">Query Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>page</td>
+<td>false</td>
+<td>If set to a number, the per page limit of results will be 25</td>
+</tr>
+<tr>
+<td>per_page</td>
+<td>false</td>
+<td>If set to a number, the per page limit of results will be set to that number</td>
+</tr>
+</tbody></table>
+
+<h2 id="filter-prospects">Filter Prospects</h2>
+<pre class="highlight shell"><code>curl -X GET <span class="s2">"https://sw-rails.herokuapp.com/api/v1/prospects?filter_by_status=replied"</span>
+
+</code></pre>
+<blockquote>
+<p>The above command returns JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sales_rep_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="s2">"Caleigh"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="s2">"Stiedemann"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="s2">"Investor Solutions Planner"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email_address"</span><span class="p">:</span><span class="s2">"caleigh@christiansen_quigley_and_kovacek.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"contact"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_name"</span><span class="p">:</span><span class="s2">"Christiansen, Quigley and Kovacek"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_desc"</span><span class="p">:</span><span class="s2">"Extended reciprocal productivity"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_addr"</span><span class="p">:</span><span class="s2">"1810 Heller Mission"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_city"</span><span class="p">:</span><span class="s2">"North Paxtonmouth"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_country"</span><span class="p">:</span><span class="s2">"Lao People's Democratic Republic"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_contact"</span><span class="p">:</span><span class="s2">"110-535-4500 x611"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"replied"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint retrieves all prospects that have the specified status.</p>
+
+<aside class="warning">Inside HTML code blocks like this one, you can&rsquo;t use Markdown, so use <code>&lt;code&gt;</code> blocks to denote code.</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">https://sw-rails.herokuapp.com/api/v1/prospects?filter_by_status=&lt;status&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+<th>Options</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>status</td>
+<td>The status of the prospect to be retrieved</td>
+<td>&ldquo;cold&rdquo;, &ldquo;contacted&rdquo;, &ldquo;replied&rdquo;, &ldquo;followed_up&rdquo;</td>
+</tr>
+</tbody></table>
+
+<aside class="warning">Note that there are only 4 filter options for prospects for now!</aside>
+
+<h2 id="add-a-prospect">Add a Prospect</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://sw-rails.herokuapp.com/api/v1/prospects?sales_rep=1&amp;email_address=kelvin.tyb@gmail.com&amp;first_name=kelvin&amp;last_name=tan"</span>
+</code></pre>
+<blockquote>
+<p>The above command posts JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="mi">3</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sales_rep_id"</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"first_name"</span><span class="p">:</span><span class="s2">"Kelvin"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"last_name"</span><span class="p">:</span><span class="s2">"Tan"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"title"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"email_address"</span><span class="p">:</span><span class="s2">"kelvin.tyb@gmail.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"contact"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_name"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_desc"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_addr"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_city"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_country"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"coy_contact"</span><span class="p">:</span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"status"</span><span class="p">:</span><span class="s2">"cold"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new prospect with the given parameters.</p>
+
+<aside class="warning">The <code>sales_rep</code> and <code>email_address</code> parameters are required! </aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://sw-rails.herokuapp.com/api/v1/prospects?sales_rep=&lt;SALES_REP_ID&gt;&amp;email_address=&lt;EMAIL_ADDRESS&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SALES_REP_ID</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>EMAIL_ADDRESS</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>TITLE</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>FIRST_NAME</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>LAST_NAME</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>CONTACT</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>COY_NAME</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>COY_DESC</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>COY_CITY</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>COY_CONTACT</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>COY_COUNTRY</td>
+<td>Optional</td>
+</tr>
+</tbody></table>
+
+<h1 id="emails">Emails</h1>
+
+<h2 id="add-an-email">Add an Email</h2>
+<pre class="highlight shell"><code>curl -X POST <span class="s2">"https://sw-rails.herokuapp.com/api/v1/emails?sender=neko@saleskitten.com&amp;recipient=elon@spacex.com"</span>
+</code></pre>
+<blockquote>
+<p>The above command posts JSON structured like this:</p>
+</blockquote>
+<pre class="highlight json"><code><span class="p">{</span><span class="w">
+  </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sales_rep_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"prospect_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">101</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"subject"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"body"</span><span class="p">:</span><span class="w"> </span><span class="kc">null</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sent_date"</span><span class="p">:</span><span class="w"> </span><span class="s2">"02/02/2017"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"sender"</span><span class="p">:</span><span class="w"> </span><span class="s2">"neko@saleskitten.com"</span><span class="p">,</span><span class="w">
+  </span><span class="nt">"recipient"</span><span class="p">:</span><span class="w"> </span><span class="s2">"elon@spacex.com"</span><span class="p">,</span><span class="w">
+</span><span class="err">}</span><span class="w">
+</span></code></pre>
+<p>This endpoint creates a new email with the given parameters.</p>
+
+<aside class="warning">The <code>sender</code> and <code>recipient</code> email addresses are required!</aside>
+
+<h3 id="http-request">HTTP Request</h3>
+
+<p><code class="prettyprint">POST https://sw-rails.herokuapp.com/api/v1/emails?sender=&lt;SENDER&gt;&amp;recipient=&lt;RECIPIENT&gt;</code></p>
+
+<h3 id="url-parameters">URL Parameters</h3>
+
+<table><thead>
+<tr>
+<th>Parameter</th>
+<th>Required?</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>SENDER</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>RECIPIENT</td>
+<td>Required</td>
+</tr>
+<tr>
+<td>SUBJECT</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>BODY</td>
+<td>Optional</td>
+</tr>
+<tr>
+<td>SENT_DATE</td>
+<td>Optional</td>
+</tr>
+</tbody></table>
+
+          <h1 id="implementation-notes">Implementation Notes</h1>
+
+<h2 id="gems-used">Gems used</h2>
+
+<p>Below are the main gems I utilised for this implementation:</p>
+
+<table><thead>
+<tr>
+<th>Gem</th>
+<th>Purpose</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>Rspec-rails</td>
+<td>Testing</td>
+</tr>
+<tr>
+<td>Factory_girl_rails</td>
+<td>Replacement of fixtures</td>
+</tr>
+<tr>
+<td>Faker</td>
+<td>Random generation of attributes for factory girl</td>
+</tr>
+<tr>
+<td>Database_cleaner</td>
+<td>For refreshing of test database while running test suite</td>
+</tr>
+<tr>
+<td>Kaminari</td>
+<td>Pagination</td>
+</tr>
+<tr>
+<td>Activerecord-import</td>
+<td>Allows for mass import of model instances with a single query</td>
+</tr>
+</tbody></table>
+
+<h2 id="highlights-challenges">Highlights / Challenges</h2>
+
+<h3 id="data-modelling">Data Modelling</h3>
+
+<p>I chose to design 3 data models to reflect the data given: SalesRep, Prospect and Email (pls refer to db/schema.rb for full details).</p>
+
+<p>While the spec did not call for any specific endpoints that would interface with the SalesRep model, I chose to separate it out to better accommodate future extension of the API and to more accurately model the relationship between SalesRep and Prospect.</p>
+
+<p>In short, SalesReps can have many Prospects, while each Prospect is associated with only one SalesRep. Emails are each associated with 1 SalesRep and 1 Prospect.</p>
+
+<p>The data model facilitates easy filtering of Emails and allows for automatic status updates for prospects upon insertion of Emails into the database.</p>
+
+<h3 id="seeding">Seeding</h3>
+
+<p>Status updates of prospects are needed both in the seed task and the POST#create endpoint for Email, so I defined the function in lib/HelperFunctions.rb to keep my code DRY. If I were to modularise out more functions that can be used in multiple spots, that&rsquo;s also where I would place them.</p>
+
+<p>The specific function that updates the status of Prospects is as follows:</p>
+
+<p>`def updateStatus(prospect)
+    flags = {&ldquo;replied&rdquo; =&gt; false, &ldquo;followed_up&rdquo; =&gt; false, &ldquo;contacted&rdquo; =&gt; false}</p>
+
+<p>prospect.emails.each do |email|
+      flags[&ldquo;contacted&rdquo;] = true
+      flags[&ldquo;followed_up&rdquo;] = true if flags[&ldquo;replied&rdquo;] &amp;&amp; email.sales_rep.email_address === email.sender
+      flags[&ldquo;replied&rdquo;] = true if email.prospect.email_address === email.sender
+    end</p>
+
+<p>if flags[&ldquo;followed_up&rdquo;]
+      prospect.update({:status =&gt; &ldquo;followed_up&rdquo;})
+    elsif flags[&ldquo;replied&rdquo;]
+      prospect.update({:status =&gt; &ldquo;replied&rdquo;})
+    elsif flags[&ldquo;contacted&rdquo;]
+      prospect.update({:status =&gt; &ldquo;contacted&rdquo;})
+    else
+      prospect.update({:status =&gt; &ldquo;cold&rdquo;})
+    end
+  end
+end`   </p>
+
+<h3 id="api-formatting">API Formatting</h3>
+
+<p>At first, I wanted to keep my API JSON API-compliant and used jsonapi-resources as a quick way of getting my resource routes up. However, the curl requests started to look unwieldy compared to using the native json formatter.</p>
+
+<p><code class="prettyprint">curl -X POST --data &#39;{&quot;data&quot;:{&quot;type&quot;:&quot;prospects&quot;,&quot;attributes&quot;:{&quot;email_address&quot;: &quot;kelvin.tyb@gmail.com&quot;}}}&#39; &quot;http://localhost:3000/api/v1/prospects&quot; -H &quot;Content-Type: application/vnd.api+json&quot;</code></p>
+
+<p>vs</p>
+
+<p><code class="prettyprint">curl -X POST &quot;http://localhost:3000/api/v1/prospects?email_address=kelvin.tyb@gmail.com</code></p>
+
+<h3 id="deployment">Deployment</h3>
+
+<aside class="notice">GET https://sw-rails.herokuapp.com/api/v1/prospects works with a SUCCESS response but returns an empty array since the database is not seeded</aside>
+
+<p>While I was able to make the API publicly accessible and use <code class="prettyprint">config.force_ssl = true</code> to enforce SSL protocol for the production app, I faced some difficulty seeding the production database from local .csv files. This led to 2 learning points:</p>
+
+<p>1) I should have configured my development database to use Postgresql instead of Sqlite3 since Heroku dynos are a bad fit for Sqlite3 instances (https://devcenter.heroku.com/articles/dynos#ephemeral-filesystem). This would allow for import of the database through db:load (using the <code class="prettyprint">taps</code> gem). This is probably the easiest way to get the database seeded in the current implementation.</p>
+
+<p>2) However, the above may not be as scalable in the scenario where users may want to upload their data using .csv files from remote locations. In this scenario, doing entire database imports will quickly become untenable as it would require users to update the same single database to be later imported into the host or (more realistically) update several databases (which all have to be synchronised).</p>
+
+<p>The alternative is to provision users with a secure cloud solution (Amazon S3) from which the .csv data can be pushed to production server and parsed with a rake task into the appropriate format. Parts of this process could also be more plausibly automated compared with the previous solution. </p>
+
+      </div>
+      <div class="dark-box">
+          <div class="lang-selector">
+                <a href="#" data-language-name="shell">shell</a>
+          </div>
+      </div>
+    </div>
+  </body>
+</html>
